@@ -4,7 +4,7 @@ public class Products {
 	private Integer id;
 	private Integer total = 0;
 	private Integer reserve = 0;
-	private Integer available;
+	private Integer available = 0;
 		
 	public Products(Integer id){
 		this.setId(id);
@@ -39,7 +39,9 @@ public class Products {
 	 * Este método atualiza a quantida de produtos, 
 	 * depois da inserção ou remoção de dados. 
 	 */
-	private void updateStock() { this.available = this.total - this.reserve; }
+	private void updateStock() { 
+		this.available = this.total - this.reserve; 
+	}
 
 	
 	//inserir e remover volumes do Produto:

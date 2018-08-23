@@ -1,7 +1,5 @@
 package resources;
 
-import java.util.ArrayList;
-
 public class Items {
 	
 	private Products product;

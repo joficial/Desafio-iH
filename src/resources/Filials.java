@@ -16,7 +16,6 @@ public class Filials {
 
 	public Filials(Integer id, Stock stock) {
 		this.id = id;
-		this.name = name;
 		this.stock = stock;
 	}
 	
@@ -24,6 +23,9 @@ public class Filials {
 	public Integer getId() { return id; }
 	public String getName() { return name; }
 	public ArrayList<Products> getStock() { return this.stock.getProducts(); }
+	public void insertOnStock(Items item) {
+		this.stock.updateItem(item);
+	}
 
 	//Sets [Genéricos]
 	public void setId(Integer id) { this.id = id; }

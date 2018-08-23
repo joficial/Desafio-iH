@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import resources.Filials;
+import resources.Items;
+import resources.Products;
 
 public class AppDesafio {
 
@@ -14,14 +16,14 @@ public class AppDesafio {
 		
 		Scanner ler = new Scanner(System.in);
 		
+		sop("Bem vindo ao S-toc");
 		while (opc != 0) {
-			sop("Bem vindo ao S-toc");
 			sop(" ----------- Selecione uma das opções: ----------");
 			sop("Selecione uma opção para iniciar:");
 			sop("1 - Visualizar lista de Filiais");
 			sop("2 - Inserir nova Filial");
 			sop("3 - Visualizar estoque de Filial");
-			sop("4 - Inserir item em estoque de uma Filial");
+			sop("4 - Atualizar item em estoque de uma Filial");
 			sop("0 - Para sair");
 			sop(" ----------- ---------- ----------");
 			sop("");
@@ -65,16 +67,48 @@ public class AppDesafio {
 				
 				break;
 			case 4:
-				//Inserir item em estoque de uma filial
+				//Atualizar item em estoque de uma filial
+				sop("Inserir o id da filial");
+				int id4 = 0;
+				id4 = ler.nextInt();
+				int posFilial = -1;
+				//Buscar a filial:
+				for (int i=0; i < filiais.size(); i++) {
+					if (filiais.get(i).getId() == id4) {
+						posFilial = i;
+						break;
+					}
+				}
 				
+				if (posFilial < 0) {sop("Filial não foi encontrada!"); break;}
+				
+				sop("Inserir o id do produto");
+				int idP4 = 0;
+				idP4 = ler.nextInt();
+				
+				sop("Inserir a quantidade para entrada:");
+				int qtdIn4 = 0;
+				qtdIn4 = ler.nextInt();
+				
+				sop("Inserir a quantidade para saída:");
+				int qtdOut4 = 0;
+				qtdOut4 = ler.nextInt();
+				
+				Products pro4 = new Products(idP4);
+				Items item4 = new Items(pro4, qtdIn4, qtdOut4);
+				
+				//Buscar dentro do estoque da filial
+				
+				filiais.get(posFilial).insertOnStock(item4);
+				sop("Feito, Ok!");
 				
 				break;
+
 			default:
 				sop("Tente novamente!");
-			}
-			
+			}	
 		}
-
+		ler.close();
 	}
 	
 	private static void sop(String s) {
