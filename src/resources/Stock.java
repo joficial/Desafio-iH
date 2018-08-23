@@ -35,5 +35,12 @@ public class Stock {
 			this.products.add(item.fixProduct());
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Stock [products=" + products + "]";
+	}
+	
+	
 	
 }
