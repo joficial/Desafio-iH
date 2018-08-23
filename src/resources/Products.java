@@ -43,7 +43,7 @@ public class Products {
 	//inserir e remover volumes do Produto:
 	
 	//Para inserir: Inserir na quantidade total
-	public void insertItens(Integer volume) {
+	public void insertVolume(Integer volume) {
 		if ((volume + this.total) > 0) {
 			this.total += volume;
 		}else {
@@ -52,7 +52,7 @@ public class Products {
 	}
 	
 	//Para remover: Remover da quantidade total
-	public void removeItens(Integer volume) {
+	public void removeVolume(Integer volume) {
 		if ((this.total - volume) >= this.available) {
 			this.total -= volume;
 			this.updateStock();
@@ -63,12 +63,5 @@ public class Products {
 	public String toString() {
 		return "Products [id=" + id + ", total=" + total + ", reserve=" + reserve + ", available=" + available + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
