@@ -8,13 +8,13 @@ public class Filials {
 	private String name;
 	private Stock stock;
 	
-	public Filials(Integer id, String name) {
+	public Filials(Integer id) {
 		this.setId(id);
-		this.setName(name);
+		this.setName("filial: " + id);
 		this.stock = new Stock();
 	}
 
-	public Filials(Integer id, String name, Stock stock) {
+	public Filials(Integer id, Stock stock) {
 		this.id = id;
 		this.name = name;
 		this.stock = stock;

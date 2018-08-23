@@ -6,7 +6,9 @@ public class Products {
 	private Integer reserve = 0;
 	private Integer available;
 		
-	//public Products(){}
+	public Products(Integer id){
+		this.setId(id);
+	}
 	public Products(Integer id, Integer total, Integer reserve)  {
 		this.setId(id);
 		this.setReserve(reserve);
